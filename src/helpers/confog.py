@@ -9,6 +9,8 @@ class Settings (BaseSettings):
     FILE_DEFAULT_CHUNK_SIZE : int
     FILE_DEFAULT_OVERLAP_SIZE : int
     DATA_BASE_NAME : str
+    QUESTION_EMBEDING_MODEL : str
+    Local_device : str
 
     class config:
         env_file = '.env'

@@ -20,3 +20,9 @@ class BaseController:
                                      "assets/files")
         os.makedirs(files_dir , exist_ok= True)
         return files_dir
+    
+    def get_vectors_path(self):
+        files_dir = os.path.join(self.base_dir,
+                                "assets/vector_db")
+        os.makedirs(files_dir , exist_ok= True)
+        return files_dir 

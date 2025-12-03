@@ -5,3 +5,4 @@ dspy-ai==3.0.4
 cohere==5.20.0 
 sentence-transformers==5.1.2 
 pydantic==2.12.5
+pymupdf==1.25.1

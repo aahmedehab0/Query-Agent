@@ -1,2 +1,2 @@
-from .confog import get_settings
-from .confog import Settings
+from .config import get_settings
+from .config import Settings

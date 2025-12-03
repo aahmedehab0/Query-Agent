@@ -1,7 +1,7 @@
 import dspy
 from langchain_cohere import ChatCohere ,CohereEmbeddings
-from helpers.confog import get_settings 
 from stores import SemanticRetriever
+from helpers.config import get_settings 
 from controllers import BaseController , ProcessController
 from models.enums import LanguageEnum
 from agent import NLToSQLModule , QueryAgent 

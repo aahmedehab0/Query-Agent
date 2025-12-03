@@ -1,4 +1,4 @@
-from helpers.confog import Settings , get_settings
+from helpers.config import Settings , get_settings
 from models.enums import LanguageEnum
 import os
 

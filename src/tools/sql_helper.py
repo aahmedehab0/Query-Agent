@@ -6,7 +6,7 @@ import dspy
 
 class SQLHelper:
 
-    def get_db_schema(db_path):
+    def get_db_schema(self , db_path):
         conn = sqlite3.connect(db_path)
         cursor = conn.cursor()
         
@@ -24,7 +24,7 @@ class SQLHelper:
         return "\n".join (schema_info)
     
 
-    def extract_select_query(output):
+    def extract_select_query(self ,output):
         """
         Extract only a SELECT SQL query from model output.
         Returns the query as a string, or None if not found.
@@ -38,7 +38,7 @@ class SQLHelper:
             return None
         
 
-    def load_jsonl(path):
+    def load_jsonl(self ,path):
         data = []
         with open(path, "r", encoding="utf-8") as f:
             for line in f:
@@ -46,7 +46,7 @@ class SQLHelper:
         return data
 
 
-    def load_dspy_dataset (dataset):
+    def load_dspy_dataset (self ,dataset):
         examples = []
         for i  in range (len (dataset)):
             

@@ -1,6 +1,6 @@
 class PromptGenerator :
 
-    def router_prompt (question : str):
+    def router_prompt (self , question : str):
         prompt_lines = [
         "You are a routing model.",
         "Your job is to classify the user question into one of these routes:",
@@ -23,7 +23,7 @@ class PromptGenerator :
         ]
         return  "\n".join(prompt_lines)
     
-    def planner_prompt (question : str):
+    def planner_prompt (self , question : str):
         prompt_lines = [
             "Create a step-by-step plan to answer the following question:",
             "question might be in any language."
@@ -35,7 +35,7 @@ class PromptGenerator :
         ]
         return  "\n".join(prompt_lines)
     
-    def sql_prompt (db_schema , question):
+    def sql_prompt (self , db_schema , question):
         prompt_lines = [
         "You MUST generate a SQL query ONLY using the tables and columns inside this schema:",
         db_schema,
@@ -53,7 +53,7 @@ class PromptGenerator :
         ]
         return  "\n".join(prompt_lines)
     
-    def sql_repair_prompt (question , sql_query , sql_results):
+    def sql_repair_prompt (self , question , sql_query , sql_results):
 
         prompt_lines= [
             "You are an expert SQL developer. A SQL query was generated for the following question:",
@@ -68,7 +68,7 @@ class PromptGenerator :
             ]
         return "\n".join(prompt_lines)
     
-    def synthesized_prompt(synthesized_output):
+    def synthesized_prompt(self , synthesized_output):
         prompt_lines = [
         "You are an expert SQL/Answer generator. Improve and clean up the following output.",
         synthesized_output,

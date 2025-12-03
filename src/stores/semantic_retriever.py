@@ -8,7 +8,8 @@ class SemanticRetriever:
         
         self.local_device = local_device
         self.local_emeding_model = local_emeding_model
-        self.model = SentenceTransformer(self.local_emeding_model , self.local_device)
+        self.model = SentenceTransformer(self.local_emeding_model , 
+                                         device= self.local_device)
         self.examples = examples
         
         if cache_path and os.path.exists(cache_path):

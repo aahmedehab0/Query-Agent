@@ -5,8 +5,6 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import PyMuPDFLoader
 from langchain_community.document_loaders import  TextLoader
 from langchain_chroma import Chroma
-from langchain_cohere import CohereEmbeddings
-
 import os
 
 
@@ -27,10 +25,10 @@ class ProcessController(BaseController):
         file_ext = self.get_file_extension (file_id = file_id)
 
         if file_ext == ProcessingEnum.TXT.value:
-            return TextLoader (file_path ,encoding= "utf-8")
+            return TextLoader (file_path=file_path ,encoding= "utf-8")
         
         if file_ext == ProcessingEnum.PDF.value:
-            return PyMuPDFLoader (file_path , encoding= "utf-8")
+            return PyMuPDFLoader (file_path=file_path )
         
         return None
     

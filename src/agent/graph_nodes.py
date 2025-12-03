@@ -1,6 +1,6 @@
 from langgraph.graph import StateGraph , START , END 
 from tools import PromptGenerator , SQLHelper
-from .schemas import AgentState
+from models.schemas import AgentState
 import sqlite3
 import json
 
@@ -9,6 +9,7 @@ import json
 class QueryAgent:
     def __init__(self, llm, dspy_model , vectorstore
                  , nl2sql_arabic, nl2sql_english , db_path):
+        
         self.llm = llm
         self.vectorstore = vectorstore
         self.dspy_model = dspy_model
@@ -51,6 +52,7 @@ class QueryAgent:
         state["plan"] = result
         return state
     
+
     def retrieve_docs_node(self , state: AgentState) -> AgentState:
         print("Retrieving from docs...")
 
@@ -72,6 +74,7 @@ class QueryAgent:
         state["retrieved_docs"] = results
         return state
     
+
     def nl_to_sql_node(self , state: AgentState) -> AgentState:
         print("query to sql...")
         question = state.get("question" , "")
@@ -105,6 +108,7 @@ class QueryAgent:
         
         return state
     
+
     def sql_executor_node(self , state: AgentState) -> AgentState:
 
         print("sql execution...")
@@ -135,6 +139,7 @@ class QueryAgent:
 
         return state
     
+
     def repair_loop_node(self , state: AgentState) -> AgentState:
     
         sql_results = state.get("sql_results", "")
@@ -255,4 +260,3 @@ class QueryAgent:
 
         # Compile
         return graph.compile()
-

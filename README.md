@@ -19,7 +19,7 @@ Query Agent intelligently routes user questions to the appropriate data source (
 - **🖥️ Interactive GUI**: Built with Streamlit for easy interaction
 - **📊 Visual Workflow**: Clear graph representation of the decision-making process
 
-## 🏗️ Architecture
+##  Architecture
 
 The agent consists of 7 interconnected nodes in a LangGraph workflow:
 
